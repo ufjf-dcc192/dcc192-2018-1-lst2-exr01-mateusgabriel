@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "AlbumServlet", urlPatterns = {"/usuario.html"})
+@WebServlet(name = "AlbumServlet", urlPatterns = {"/usuario.html", "/album.html"})
 public class AlbumServlet extends HttpServlet {
 
     @Override
@@ -17,12 +17,26 @@ public class AlbumServlet extends HttpServlet {
         {
             listarUsuarios(req, resp);
         }
+        if ("/album.html".equals(req.getServletPath()))
+        {
+            listarAlbuns(req, resp);
+        }
     }
 
     private void listarUsuarios(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Usuario> usuarios = ListaDeUsuarios.getInstance();
         req.setAttribute("usuarios", usuarios);
         RequestDispatcher despachante = req.getRequestDispatcher("/WEB-INF/listar-usuario.jsp");
+        despachante.forward(req, resp);
+    }
+
+    private void listarAlbuns(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=UTF-8");
+        int codigo = Integer.parseInt(req.getParameter("linha"));
+        List<Usuario> usuarios = ListaDeUsuarios.getInstance();
+        Album a = usuarios.get(codigo).getA();
+        req.setAttribute("albuns", a);
+        RequestDispatcher despachante = req.getRequestDispatcher("/WEB-INF/listar-album.jsp");
         despachante.forward(req, resp);
     }
 
