@@ -14,7 +14,7 @@
                 List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");            
                 for(int i = 0; i < usuarios.size(); i++){                
             %>
-            <li><a href="album.html?linha<%=i%>"><%=usuarios.get(i).getNome()%></li>
+            <li><a href="album.html?linha=<%=i%>"><%=usuarios.get(i).getNome()%></li>
             <%}%>
         </ul>
             
