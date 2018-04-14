@@ -3,38 +3,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Album {
-    String nome = "Copa do Mundo 2018";
-    private static List<Figurinha> figurinhas;
-    private static List<Figurinha> repetidas;
-    private static List<Figurinha> possuidas;
-    
-    public static List<Figurinha> getInstance() {
-        if (figurinhas == null) {
-            figurinhas = new ArrayList<>();
-            figurinhas.add(new Figurinha(1, "Primeira Tarefa"));
-            figurinhas.add(new Figurinha(2, "Segunda Tarefa"));
-            figurinhas.add(new Figurinha(3, "Tarefa Tarefa"));
-            figurinhas.add(new Figurinha(4, "Tarefa Tarefa"));
-            figurinhas.add(new Figurinha(5, "Tarefa Tarefa"));
-            figurinhas.add(new Figurinha(6, "Tarefa Tarefa"));
-            figurinhas.add(new Figurinha(7, "Tarefa Tarefa"));
-            figurinhas.add(new Figurinha(8, "Tarefa Tarefa"));
-            figurinhas.add(new Figurinha(9, "Tarefa Tarefa"));
-            figurinhas.add(new Figurinha(10, "Tarefa Tarefa"));
-        }
-        return figurinhas;
-    }
 
-    public Album(List<Figurinha> figurinhas, List<Figurinha> repetidas, List<Figurinha> possuidas) {
-        this.figurinhas = figurinhas;
-        this.repetidas = repetidas;
-        this.possuidas = possuidas;
-    }
+    String nome = "Copa do Mundo 2018";
+    private List<Figurinha> figurinhas;
 
     public Album() {
+        figurinhas = new ArrayList<>();
+        figurinhas.add(new Figurinha(1, "Escudo Rússia"));
+        figurinhas.add(new Figurinha(2, "Escudo Arábia Saudita"));
+        figurinhas.add(new Figurinha(3, "Escudo Egito"));
+        figurinhas.add(new Figurinha(4, "Escudo Uruguai"));
+        figurinhas.add(new Figurinha(5, "Escudo Portugal"));
+        figurinhas.add(new Figurinha(6, "Escudo Espanha"));
+        figurinhas.add(new Figurinha(7, "Escudo Iran"));
+        figurinhas.add(new Figurinha(8, "Escudo Marrocos"));
+        figurinhas.add(new Figurinha(9, "Escudo França"));
+        figurinhas.add(new Figurinha(10, "Escudo Austrália"));
     }
-    
-    
 
     public String getNome() {
         return nome;
@@ -52,22 +37,4 @@ public class Album {
         this.figurinhas = figurinhas;
     }
 
-    public List<Figurinha> getRepetidas() {
-        return repetidas;
-    }
-
-    public void setRepetidas(List<Figurinha> repetidas) {
-        this.repetidas = repetidas;
-    }
-
-    public List<Figurinha> getPossuidas() {
-        return possuidas;
-    }
-
-    public void setPossuidas(List<Figurinha> possuidas) {
-        this.possuidas = possuidas;
-    }
-    
-    
-    
 }
