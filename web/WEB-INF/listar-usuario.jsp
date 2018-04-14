@@ -11,9 +11,7 @@
         <ul>
             <% 
                 List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
-                %>
-            <li><a> Administrar álbum </a>.</li>
-            <% 
+            
                 for(int i = 0; i < ListaDeUsuarios.getInstance().size(); i++){
                 Usuario usuario = ListaDeUsuarios.getInstance().get(i);
             %>
