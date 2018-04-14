@@ -13,7 +13,7 @@ public class AlbumServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if ("/album.html".equals(req.getServletPath()))
+        if ("/usuario.html".equals(req.getServletPath()))
         {
             listarUsuarios(req, resp);
         }
