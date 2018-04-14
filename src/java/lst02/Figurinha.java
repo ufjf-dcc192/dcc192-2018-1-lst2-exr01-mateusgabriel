@@ -1,3 +1,5 @@
+package lst02;
+
 public class Figurinha {
     Integer numero;
     String nome;
