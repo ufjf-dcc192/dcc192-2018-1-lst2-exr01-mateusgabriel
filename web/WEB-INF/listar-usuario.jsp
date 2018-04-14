@@ -8,10 +8,13 @@
     <body>
         <h1>Lista de Usuarios</h1>
         <ul>
-            <% 
-                for(int i = 0; i < ListaDeUsuarios.getInstance.size; i++)
-            %>
             <li><a> Administrar álbum </a>.</li>
+            <% 
+                for(int i = 0; i < ListaDeUsuarios.getInstance.size(); i++){
+                Usuario usuarios = ListaDeUsuarios.getInstance.get(i)
+            %>
+            <li></li>
+            <%}%>
         </ul>
             
     </body>
