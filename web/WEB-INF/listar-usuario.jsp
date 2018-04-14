@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,12 +9,15 @@
     <body>
         <h1>Lista de Usuarios</h1>
         <ul>
+            <% 
+                List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
+                %>
             <li><a> Administrar álbum </a>.</li>
             <% 
-                for(int i = 0; i < ListaDeUsuarios.getInstance.size(); i++){
-                Usuario usuarios = ListaDeUsuarios.getInstance.get(i)
+                for(int i = 0; i < ListaDeUsuarios.getInstance().size(); i++){
+                Usuario usuario = ListaDeUsuarios.getInstance().get(i);
             %>
-            <li></li>
+            <li><a href="album.html?linha<%=i%>"<%usuario.getNome();%></li>
             <%}%>
         </ul>
             
