@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "AlbumServlet", urlPatterns = {"/usuario.html", "/album.html"})
+@WebServlet(name = "AlbumServlet", urlPatterns = {"/usuario.html", "/album.html", "/cromo.html"})
 public class AlbumServlet extends HttpServlet {
 
     @Override
@@ -19,9 +19,13 @@ public class AlbumServlet extends HttpServlet {
         {
             listarUsuarios(req, resp);
         }
-        if ("/album.html".equals(req.getServletPath()))
+        else if ("/album.html".equals(req.getServletPath()))
         {
             listarAlbuns(req, resp);
+        }
+        else if ("/cromo.html".equals(req.getServletPath()))
+        {
+            listarFigurinhas(req, resp);
         }
     }
 
@@ -42,5 +46,13 @@ public class AlbumServlet extends HttpServlet {
         despachante.forward(req, resp);
     }
 
-    
+    private void listarFigurinhas(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=UTF-8");
+        int codigo = Integer.parseInt(req.getParameter("linha"));
+        Album a = new Album();
+        req.setAttribute("albuns", a);
+        RequestDispatcher despachante = req.getRequestDispatcher("/WEB-INF/listar-figurinha.jsp");
+        despachante.forward(req, resp);
+    }
+
 }

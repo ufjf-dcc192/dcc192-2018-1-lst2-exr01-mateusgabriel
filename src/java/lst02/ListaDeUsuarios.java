@@ -11,7 +11,7 @@ public class ListaDeUsuarios {
         if (usuarios == null) {
             usuarios = new ArrayList<>();
             usuarios.add(new Usuario("Reginaldo"));
-            usuarios.add(new Usuario("Rogerin157"));
+            usuarios.add(new Usuario("Rogerin"));
             usuarios.add(new Usuario("Nem"));
         }
         return usuarios;

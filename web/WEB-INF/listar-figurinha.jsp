@@ -1,3 +1,4 @@
+<%@page import="lst02.Album"%>
 <%@page import="java.util.List"%>
 <%@page import="lst02.Figurinha"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,10 +12,11 @@
         <h1>Lista de Figurinhas</h1>
         <ul>
             <%
-                List<Figurinha> figurinhas = (List<Figurinha>) request.getAttribute("figurinhas");            
+                Album a = (Album) request.getAttribute("albuns");
+                List<Figurinha> figurinhas = a.getFigurinhas();
                 for(int i = 0; i < figurinhas.size(); i++){             
             %>
-            <li><a href="cromo.html?linha<%=i%>"><%=figurinhas.get(i).getNome()%></li>
+            <li> <%= figurinhas.get(i).getNome() %> </li>
             <%}%>
         </ul>
     </body>

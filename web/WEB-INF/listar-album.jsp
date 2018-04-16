@@ -10,12 +10,14 @@
     <body>
         <h1>Lista de Albuns</h1>
         <ul>
-            <%
-                List<Album> albuns = (List<Album>) request.getAttribute("albuns");            
-                for(int i = 0; i < albuns.size(); i++){                
+            <% 
+                Album a = (Album) request.getAttribute("albuns");
             %>
-            <li><a href="figurinha.html?linha=<%=i%>"><%=albuns.get(i).getNome()%></li>
-            <%}%>
+            <li>
+                
+                <a href="cromo.html?linha=<%=a.getNome()%>"> <%=a.getNome()%>
+            
+            </li>
         </ul>
     </body>
 </html>
