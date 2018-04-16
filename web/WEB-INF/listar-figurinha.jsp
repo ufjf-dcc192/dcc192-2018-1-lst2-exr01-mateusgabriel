@@ -12,8 +12,7 @@
         <h1>Lista de Figurinhas</h1>
         <ul>
             <%
-                Album a = (Album) request.getAttribute("albuns");
-                List<Figurinha> figurinhas = a.getFigurinhas();
+                List<Figurinha> figurinhas = (List<Figurinha>) request.getAttribute("figurinhas");
                 for(int i = 0; i < figurinhas.size(); i++){             
             %>
             <li> <%= figurinhas.get(i).getNome() %> </li>

@@ -15,7 +15,7 @@
             %>
             <li>
                 
-                <a href="cromo.html?linha=<%=a.getNome()%>"> <%=a.getNome()%>
+                <a href="cromo.html?linha=<%=a.getId()%>"> <%=a.getNome()%>
             
             </li>
         </ul>

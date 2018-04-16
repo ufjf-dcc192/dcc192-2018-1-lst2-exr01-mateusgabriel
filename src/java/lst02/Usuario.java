@@ -3,11 +3,12 @@ package lst02;
 
 public class Usuario {
 
-    Album a = new Album();
+    Album a;
     String nome;
 
-    public Usuario(String nome) {
+    public Usuario(String nome, int i) {
         this.nome = nome;
+        this.a = new Album(i);
     }
 
     public String getNome() {

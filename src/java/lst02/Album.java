@@ -6,10 +6,12 @@ import java.util.List;
 
 public class Album {
 
+    private int id;
     String nome = "Copa do Mundo 2018";
     private List<Figurinha> figurinhas;
 
-    public Album() {
+    public Album(int i) {
+        this.id = i;
         figurinhas = new ArrayList<>();
         figurinhas.add(new Figurinha(1, "Escudo Rússia"));
         figurinhas.add(new Figurinha(2, "Escudo Arábia Saudita"));
@@ -37,6 +39,14 @@ public class Album {
 
     public void setFigurinhas(List<Figurinha> figurinhas) {
         this.figurinhas = figurinhas;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

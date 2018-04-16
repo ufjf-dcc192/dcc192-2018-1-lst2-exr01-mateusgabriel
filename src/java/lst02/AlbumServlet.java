@@ -2,6 +2,7 @@ package lst02;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -49,10 +50,17 @@ public class AlbumServlet extends HttpServlet {
     private void listarFigurinhas(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
         int codigo = Integer.parseInt(req.getParameter("linha"));
-        Album a = new Album();
-        req.setAttribute("albuns", a);
+        List<Figurinha> figurinhas = new ArrayList<>();
+        List<Usuario> usuarios = ListaDeUsuarios.getInstance();
+        for(Usuario u: usuarios)
+        {
+            if (u.getA().getId() == codigo)
+            {
+                figurinhas = u.getA().getFigurinhas();
+            }
+        }
+        req.setAttribute("figurinhas", figurinhas);
         RequestDispatcher despachante = req.getRequestDispatcher("/WEB-INF/listar-figurinha.jsp");
         despachante.forward(req, resp);
     }
-
 }
