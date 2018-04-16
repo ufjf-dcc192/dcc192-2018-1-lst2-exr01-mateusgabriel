@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "AlbumServlet", urlPatterns = {"/usuario.html", "/album.html", "/cromo.html"})
+@WebServlet(name = "AlbumServlet", urlPatterns = {"/usuario.html", "/album.html", "/cromo.html", "/cadastrarusuario.html"})
 public class AlbumServlet extends HttpServlet {
 
     @Override
@@ -27,6 +27,10 @@ public class AlbumServlet extends HttpServlet {
         else if ("/cromo.html".equals(req.getServletPath()))
         {
             listarFigurinhas(req, resp);
+        }
+        else if("cadastrarusuario.html".equals(req.getServletPath()))
+        {
+            cadastrarUsuario(req, resp);
         }
     }
 
@@ -62,5 +66,9 @@ public class AlbumServlet extends HttpServlet {
         req.setAttribute("figurinhas", figurinhas);
         RequestDispatcher despachante = req.getRequestDispatcher("/WEB-INF/listar-figurinha.jsp");
         despachante.forward(req, resp);
+    }
+
+    private void cadastrarUsuario(HttpServletRequest req, HttpServletResponse resp) {
+        
     }
 }
